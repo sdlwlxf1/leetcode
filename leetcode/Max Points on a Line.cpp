@@ -46,8 +46,8 @@ int maxPoints(vector<Point>& points) {
     return max;
 }
 
-int main() {
-    vector<Point> points = {{1,1},{1,1},{2,2},{2,2}};
-    int ret = maxPoints(points);
-    return ret;
-}
+//int main() {
+//    vector<Point> points = {{1,1},{1,1},{2,2},{2,2}};
+//    int ret = maxPoints(points);
+//    return ret;
+//}

@@ -144,6 +144,10 @@ class DoNothing
     def reducible?
         false
     end
+
+    def evaluate(environment)
+        environment
+    end
 end
 
 class Assign < Struct.new(:name, :expression)
@@ -165,6 +169,10 @@ class Assign < Struct.new(:name, :expression)
         else
             [DoNothing.new, environment.merge({ name => expression})]
         end
+    end
+
+    def evaluate(environment)
+        environment.merge({ name => expression.evaluate(environment) })
     end
 end
 
@@ -193,6 +201,15 @@ class If < Struct.new(:condition, :consequence, :alternative)
             end
         end
     end
+
+    def evaluate(environment)
+        case condition.evaluate(environment)
+        when Boolean.new(true)
+            consequence.evaluate(environment)
+        when Boolean.new(false)
+            alternative.evaluate(environment)
+        end
+    end
 end
 
 class Sequence < Struct.new(:first, :second)
@@ -217,6 +234,10 @@ class Sequence < Struct.new(:first, :second)
             [Sequence.new(reduced_first, second), reduced_environment]
         end
     end
+
+    def evaluate(environment)
+        second.evaluate(first.evaluate(environment))
+    end
 end
 
 class While < Struct.new(:condition, :body)
@@ -235,6 +256,15 @@ class While < Struct.new(:condition, :body)
     def reduce(environment)
         [If.new(condition, Sequence.new(body, self), DoNothing.new), environment]
     end
+
+    def evaluate(environment)
+        case condition.evaluate(environment)
+        when Boolean.new(true)
+            evaluate(body.evaluate(environment))
+        when Boolean.new(false)
+            environment
+        end
+    end
 end
 
 class Machine < Struct.new(:statement, :environment)
@@ -252,15 +282,91 @@ class Machine < Struct.new(:statement, :environment)
     end
 end
 
-print Machine.new(
-    While.new(
-        LessThan.new(Variable.new(:x), Number.new(5)),
-        Assign.new(:x, Multiply.new(Variable.new(:x), Number.new(3)))
-    ),
-    { :x => Number.new(1) }
-).run
+class DFA < Struct.new(:current_state, :accept_states, :rulebook)
 
-print LessThan.new(
-    Add.new(Variable.new(:x), Number.new(2)),
-    Variable.new(:y)
-).evaluate({ :x => Number.new(2), :y => Number.new(5) })
+    def read_string(string)
+        string.chars.each do |character|
+            read_character(character)
+        end
+    end
+
+    def read_character(character)
+        self.current_state = rulebook.next_state(current_state, character)
+    end
+
+    def accepting?
+        accept_states.include?(current_state)
+    end
+end
+
+class DFADesign < Struct.new(:start_state, :accept_states, :rulebook)
+    def to_dfa
+        DFA.new(start_state, accept_states, rulebook)
+    end
+
+    def accepts?(string)
+        to_dfa.tap { |dfa| dfa.read_string(string) }.accepting?
+    end
+end
+
+class FARule < Struct.new(:state, :character, :next_state)
+    def applies_to?(state, character)
+        self.state == state && self.character == character
+    end
+
+    def follow
+        next_state
+    end
+
+    def inspect
+        "#<FARule #{state.inspect} --#{character}--> #{next_state.inspect}>"
+    end
+end
+
+require 'set'
+
+class DFARuleBook < Struct.new(:rules)
+    def next_state(states, character)
+        states.flat_map { |state| follow_rules_for(state, character) }.to_set
+    end
+
+    def follow_rules_for(state, character)
+        rules_for(state, character).map(&:follow)
+    end
+
+    def rule_for(state, character)
+        rules.select { |rule| rule.applies_to?(state, character) }
+    end
+end
+
+class NFA < Struct.new(:current_states, :accept_states, :rulebook)
+    def accepting?
+        (current_states & accept_states).any?
+    end
+
+    def read_character(character)
+        self.current_states = rulebook.next_states(current_states, character)
+    end
+
+    def read_string(string)
+        string.chars.each do |character|
+            read_character(character)
+        end
+    end
+end
+
+class NFADesign < Struct.new(:state_state, :accept_states, :rulebook)
+    def accepts?(string)
+        to_nfa.tap { |nfa| nfa.read_string(string) }.accepting?
+    end
+
+    def to_nfa
+        NFA.new(Set[state_state], accept_states, rulebook)
+    end
+end
+
+print  NFARulebook.new([
+    FARule.new(1, 'a', 1), FARule.new(1, 'b', 1), FARule.new(1, 'b', 2),
+    FARule.new(2, 'a', 3), FARule.new(2, 'b', 3),
+    FARule.new(3, 'a', 4), FARule.new(3, 'b', 4)
+    ]).next_states(Set[1], 'b')
