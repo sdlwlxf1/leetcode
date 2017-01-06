@@ -66,13 +66,13 @@ vector<vector<string>> groupAnagrams(vector<string>& strs) {
 //    return res;
 //}
 
-int main() {
-    vector<string> strs = 
-    {
-        "", "b"
-    };
-
-    vector< vector<string> > res = groupAnagrams(strs);
-
-    return 0;
-}
+//int main() {
+//    vector<string> strs = 
+//    {
+//        "", "b"
+//    };
+//
+//    vector< vector<string> > res = groupAnagrams(strs);
+//
+//    return 0;
+//}

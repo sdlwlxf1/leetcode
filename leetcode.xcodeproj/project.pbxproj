@@ -10,6 +10,8 @@
 		160174DA1DEC3612009D6184 /* Max Points on a Line.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 160174D91DEC3612009D6184 /* Max Points on a Line.cpp */; };
 		160311AA1DD079C00084ADA9 /* Permutation Sequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 160311A91DD079C00084ADA9 /* Permutation Sequence.cpp */; };
 		160311AC1DD08C600084ADA9 /* Minimum Path Sum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 160311AB1DD08C600084ADA9 /* Minimum Path Sum.cpp */; };
+		1621319A1E1F3A5D0068CFB3 /* Find All Duplicates in an Array.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 162131991E1F3A5D0068CFB3 /* Find All Duplicates in an Array.cpp */; };
+		1621319C1E1F3A640068CFB3 /* Longest Palindrome.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1621319B1E1F3A640068CFB3 /* Longest Palindrome.cpp */; };
 		1654F5651DD9A86100D479AE /* Largest Rectangle in Histogram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1654F5641DD9A86100D479AE /* Largest Rectangle in Histogram.cpp */; };
 		1654F5671DD9BFC000D479AE /* Maximal Rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1654F5661DD9BFC000D479AE /* Maximal Rectangle.cpp */; };
 		165777661DD30EA4003D1ECA /* Longest Palindromic Substring.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 165777651DD30EA4003D1ECA /* Longest Palindromic Substring.cpp */; };
@@ -20,6 +22,8 @@
 		1666A62F1DCB41D500CBAECD /* Best Time to Buy and Sell Stock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1666A62D1DCB41D500CBAECD /* Best Time to Buy and Sell Stock.cpp */; };
 		1666A6311DD0652200CBAECD /* Add Strings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1666A6301DD0652200CBAECD /* Add Strings.cpp */; };
 		168048761DDD59B30034A660 /* Partition Equal Subset Sum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 168048751DDD59B30034A660 /* Partition Equal Subset Sum.cpp */; };
+		1697B7721E1127C900E17972 /* Kth Largest Element in an Array.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1697B7711E1127C900E17972 /* Kth Largest Element in an Array.cpp */; };
+		16A495561E0B81900021B253 /* Group Anagrams.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16A495551E0B81900021B253 /* Group Anagrams.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +42,8 @@
 		160174D91DEC3612009D6184 /* Max Points on a Line.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Max Points on a Line.cpp"; sourceTree = "<group>"; };
 		160311A91DD079C00084ADA9 /* Permutation Sequence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Permutation Sequence.cpp"; sourceTree = "<group>"; };
 		160311AB1DD08C600084ADA9 /* Minimum Path Sum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Minimum Path Sum.cpp"; sourceTree = "<group>"; };
+		162131991E1F3A5D0068CFB3 /* Find All Duplicates in an Array.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Find All Duplicates in an Array.cpp"; sourceTree = "<group>"; };
+		1621319B1E1F3A640068CFB3 /* Longest Palindrome.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Longest Palindrome.cpp"; sourceTree = "<group>"; };
 		1654F5641DD9A86100D479AE /* Largest Rectangle in Histogram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Largest Rectangle in Histogram.cpp"; sourceTree = "<group>"; };
 		1654F5661DD9BFC000D479AE /* Maximal Rectangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Maximal Rectangle.cpp"; sourceTree = "<group>"; };
 		165777651DD30EA4003D1ECA /* Longest Palindromic Substring.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Longest Palindromic Substring.cpp"; sourceTree = "<group>"; };
@@ -49,6 +55,8 @@
 		1666A62D1DCB41D500CBAECD /* Best Time to Buy and Sell Stock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Best Time to Buy and Sell Stock.cpp"; sourceTree = "<group>"; };
 		1666A6301DD0652200CBAECD /* Add Strings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Add Strings.cpp"; sourceTree = "<group>"; };
 		168048751DDD59B30034A660 /* Partition Equal Subset Sum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Partition Equal Subset Sum.cpp"; sourceTree = "<group>"; };
+		1697B7711E1127C900E17972 /* Kth Largest Element in an Array.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Kth Largest Element in an Array.cpp"; sourceTree = "<group>"; };
+		16A495551E0B81900021B253 /* Group Anagrams.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Group Anagrams.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,10 @@
 		1666A6251DCB2E8300CBAECD /* leetcode */ = {
 			isa = PBXGroup;
 			children = (
+				1621319B1E1F3A640068CFB3 /* Longest Palindrome.cpp */,
+				162131991E1F3A5D0068CFB3 /* Find All Duplicates in an Array.cpp */,
+				1697B7711E1127C900E17972 /* Kth Largest Element in an Array.cpp */,
+				16A495551E0B81900021B253 /* Group Anagrams.cpp */,
 				160174D91DEC3612009D6184 /* Max Points on a Line.cpp */,
 				168048751DDD59B30034A660 /* Partition Equal Subset Sum.cpp */,
 				1654F5661DD9BFC000D479AE /* Maximal Rectangle.cpp */,
@@ -155,6 +167,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1697B7721E1127C900E17972 /* Kth Largest Element in an Array.cpp in Sources */,
+				1621319C1E1F3A640068CFB3 /* Longest Palindrome.cpp in Sources */,
+				16A495561E0B81900021B253 /* Group Anagrams.cpp in Sources */,
 				165777681DD47E33003D1ECA /* Maximum Subarray.cpp in Sources */,
 				1657776A1DD59946003D1ECA /* H-Index.cpp in Sources */,
 				1654F5671DD9BFC000D479AE /* Maximal Rectangle.cpp in Sources */,
@@ -162,6 +177,7 @@
 				1654F5651DD9A86100D479AE /* Largest Rectangle in Histogram.cpp in Sources */,
 				1657776C1DD59FD7003D1ECA /* H-Index II.cpp in Sources */,
 				165777661DD30EA4003D1ECA /* Longest Palindromic Substring.cpp in Sources */,
+				1621319A1E1F3A5D0068CFB3 /* Find All Duplicates in an Array.cpp in Sources */,
 				1666A6311DD0652200CBAECD /* Add Strings.cpp in Sources */,
 				168048761DDD59B30034A660 /* Partition Equal Subset Sum.cpp in Sources */,
 				160311AA1DD079C00084ADA9 /* Permutation Sequence.cpp in Sources */,
